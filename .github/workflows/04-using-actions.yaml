@@ -3,6 +3,9 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./my-app
     steps:
       - name: checkout code
         uses: actions/checkout@v4
@@ -17,9 +20,9 @@ jobs:
       
       - name: install dependencies
         run: npm ci
-        working-directory: ./my-app
+        # working-directory: ./my-app
       
       - name: run unit test
         run: npm run test
-        working-directory: ./my-app
+        # working-directory: ./my-app
         
