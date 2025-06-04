@@ -18,4 +18,8 @@ jobs:
       - name: install dependencies
         run: npm ci
         working-directory: ./my-app
+      
+      - name: run unit test
+        run: npm run test
+        working-directory: ./my-app
         
